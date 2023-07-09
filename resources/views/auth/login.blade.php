@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
 <head>
     <title>Login de Usuario</title>
     <!-- Incluir los estilos de Bootstrap -->
@@ -32,12 +33,12 @@
         <form method="POST" action="{{ route('login') }}" class="mt-4">
             @csrf
 
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label for="email">Correo electrónico:</label>
                 <input type="email" name="email" id="email" class="form-control">
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label for="password">Contraseña:</label>
                 <input type="password" name="password" id="password" class="form-control">
             </div>

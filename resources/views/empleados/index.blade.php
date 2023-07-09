@@ -32,7 +32,7 @@
                                     <td>{{ $empleado->correo }}</td>
                                     <td>{{ $empleado->celular }}</td>
                                     <td>
-                                        <a href="{{ route('empleados.metas.create', $empleado) }}" class="btn btn-primary">{{ __('Metas') }}</a>
+                                        <a href="{{ route('empleados.metas.create', $empleado) }}" class="btn btn-primary">{{ __('Registrar Meta') }}</a>
                                         <a href="{{ route('empleados.edit', $empleado) }}" class="btn btn-primary">{{ __('Editar') }}</a>
                                         <a href="{{ route('empleados.delete', $empleado) }}" class="btn btn-danger">{{ __('Eliminar') }}</a>
                                     </td>

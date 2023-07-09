@@ -15,6 +15,7 @@
                                 <th>{{ __('Duración') }}</th>
                                 <th>{{ __('ID Empleado') }}</th>
                                 <th>{{ __('Acciones') }}</th>
+                                <th>{{ __('Objetivos') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,6 +27,17 @@
                                     <td>
                                         <a href="{{ route('metas.edit', $meta) }}" class="btn btn-primary">{{ __('Editar') }}</a>
                                         <a href="{{ route('metas.delete', $meta) }}" class="btn btn-danger">{{ __('Eliminar') }}</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('metas.avances.store', $meta) }}" class="btn btn-primary">{{ __('Registrar Avance') }}</a>
+                                        @if ($meta->avance)
+                                            <a href="{{ route('metas.avances.edit', $meta->avance) }}" class="btn btn-secondary">{{ __('Editar Avance') }}</a>
+                                        @else
+                                            <form action="{{ route('metas.avances.store', $meta) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-secondary">{{ __('Agregar Avance') }}</button>
+                                            </form>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

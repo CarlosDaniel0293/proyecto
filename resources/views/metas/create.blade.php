@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Registrar Meta') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('empleados.metas.store', $empleado) }}" method="POST">
+                    <form action="{{ route('empleados.metas.create', $empleado) }}" method="POST">
                         @csrf
 
                         <div class="form-group mb-3">
@@ -20,6 +20,8 @@
                             <label for="duracion">{{ __('Duración') }}</label>
                             <input type="text" name="duracion" id="duracion" class="form-control">
                         </div>
+
+                        <input type="hidden" name="empleado_id" value="{{ $empleado->id }}">
 
                         <button type="submit" class="btn btn-primary">{{ __('Registrar Meta') }}</button>
                     </form>
